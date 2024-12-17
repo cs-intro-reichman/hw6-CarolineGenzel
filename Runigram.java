@@ -145,7 +145,6 @@ public class Runigram {
         for (int j = 0; j < width; j++) {
             int h=(int)(i*(originalHeight/(double) height));
 			int w=(int)(j*(originalWidth/(double) width));
-			
             scaledImage[i][j] = image[h][w];
         }
     }
