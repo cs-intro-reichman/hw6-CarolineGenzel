@@ -110,6 +110,7 @@ public class Runigram {
 	private static Color luminance(Color pixel) {
 		//// Replace the following statement with your code
 		int lum= (int)( (0.299 * pixel.getRed()) + (0.587 * pixel.getGreen()) +( 0.144 * pixel.getBlue()));
+		lum = Math.max(0, Math.min(255, lum)); // if the lum out of rage
 		return new Color(lum,lum,lum);
 	}
 	
