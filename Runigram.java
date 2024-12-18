@@ -19,7 +19,6 @@ public class Runigram {
 		image = flippedHorizontally(tinypic);
 		System.out.println();
 		print(image);
-		
 		//// Write here whatever code you need in order to test your work.
 		//// You can continue using the image array.
 	}
@@ -110,7 +109,6 @@ public class Runigram {
 	private static Color luminance(Color pixel) {
 		//// Replace the following statement with your code
 		int lum= (int)( (0.299 * pixel.getRed()) + (0.587 * pixel.getGreen()) +( 0.144 * pixel.getBlue()));
-		lum = Math.max(0, Math.min(255, lum)); // if the lum out of rage
 		return new Color(lum,lum,lum);
 	}
 	
