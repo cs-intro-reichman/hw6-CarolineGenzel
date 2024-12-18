@@ -211,7 +211,7 @@ public class Runigram {
 		StdDraw.setTitle("Runigram 2023");
 		int height = image.length;
 		int width = image[0].length;
-		StdDraw.setCanvasSize(width, height);
+		StdDraw.setCanvasSize(height, width);
 		StdDraw.setXscale(0, width);
 		StdDraw.setYscale(0, height);
         // Enables drawing graphics in memory and showing it on the screen only when
