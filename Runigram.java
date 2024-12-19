@@ -108,7 +108,10 @@ public class Runigram {
 	// the three values r = lum, g = lum, b = lum.
 	private static Color luminance(Color pixel) {
 		//// Replace the following statement with your code
-		int lum= (int)( (0.299 * pixel.getRed()) + (0.587 * pixel.getGreen()) +( 0.144 * pixel.getBlue()));
+		double red= 0.299 * pixel.getRed();
+		double green= 0.587 * pixel.getGreen();
+		double blue= 0.144 * pixel.getBlue();
+		int lum= (int)(red+green+blue);
 		return new Color(lum,lum,lum);
 	}
 	
