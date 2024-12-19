@@ -110,7 +110,7 @@ public class Runigram {
 		//// Replace the following statement with your code
 		double red= 0.299 * pixel.getRed();
 		double green= 0.587 * pixel.getGreen();
-		double blue= 0.144 * pixel.getBlue();
+		double blue= 0.114 * pixel.getBlue();
 		int lum= (int)(red+green+blue);
 		return new Color(lum,lum,lum);
 	}
@@ -120,12 +120,13 @@ public class Runigram {
 	 */
 	public static Color[][] grayScaled(Color[][] image) {
 		//// Replace the following statement with your code
+		Color [][] greyScaled= new Color[image.length][image[0].length];
 		for(int i=0;i<image.length;i++){
 			for(int j=0;j<image[0].length;j++){
-				image[i][j]=luminance(image[i][j]);
+				greyScaled[i][j]=luminance(image[i][j]);
 			}
 			}
-		return image;
+		return greyScaled;
 	}	
 	
 	/**
@@ -162,9 +163,9 @@ public class Runigram {
 	 */
 	public static Color blend(Color c1, Color c2, double alpha) {
 		//// Replace the following statement with your code
-		int red= (int)((alpha*c1.getRed())+(1-alpha)*c2.getRed());
-		int green= (int)((alpha*c1.getGreen())+(1-alpha)*c2.getGreen());
-		int blue= (int)((alpha*c1.getBlue())+(1-alpha)*c2.getBlue());
+		int red= (int)((alpha * c1.getRed()) + (1-alpha) * c2.getRed());
+		int green= (int)((alpha * c1.getGreen()) + (1-alpha) * c2.getGreen());
+		int blue= (int)((alpha * c1.getBlue()) + (1-alpha) * c2.getBlue());
 
 		return new Color(red,green,blue);
 	}
@@ -201,7 +202,7 @@ public class Runigram {
 		}
 
 		while(count <= n){
-			double a = (n-count)/n;
+			double a = (double)(n-count)/n;
 			Runigram.display(blend(source, target, a));
 			StdDraw.pause(500);
 		    count++;
@@ -214,7 +215,7 @@ public class Runigram {
 		StdDraw.setTitle("Runigram 2023");
 		int height = image.length;
 		int width = image[0].length;
-		StdDraw.setCanvasSize(height, width);
+		StdDraw.setCanvasSize(width, height);
 		StdDraw.setXscale(0, width);
 		StdDraw.setYscale(0, height);
         // Enables drawing graphics in memory and showing it on the screen only when
